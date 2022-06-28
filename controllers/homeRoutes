@@ -1,0 +1,18 @@
+const router = require('express').Router();
+const { Ingredients, Recipes, Users } = require('../models');
+const withAuth = require('../utils/auth');
+
+//router.get('/', async (req, res) => {})
+
+//router.get('/login', (req, res) => {
+
+//router.get('/project/:id', async (req, res) => {}
+
+//router.get('/profile', withAuth, async (req, res) => {}
+
+//router.get('/signup', (req, res) => {}
+
+
+module.exports = router;
+
+  
