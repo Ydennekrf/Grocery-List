@@ -38,15 +38,6 @@ Recipes.init({
         type: DataTypes.INTEGER,
         allowNull: false
     },
-    unit_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'ingredients',
-            key: 'unitMeasure'
-        }
-
-    },
     user_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
