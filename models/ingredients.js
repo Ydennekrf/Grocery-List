@@ -21,10 +21,6 @@ class Ingredients extends Model {}
             type: DataTypes.INTEGER,
             allowNull: true,
         },
-        unitMeasure: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        }
         },
         {
             sequelize,
@@ -32,5 +28,5 @@ class Ingredients extends Model {}
             underscored: true,
             modelName: 'ingredients'
         });
-        
+
         module.exports = Ingredients

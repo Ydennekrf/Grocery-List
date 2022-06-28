@@ -37,7 +37,16 @@ Users.init({
         validate: {
             len: [8,25]
         }
+    },
+    phone: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+            len: [10,10]
+        }
     }
+
+    
 },
 {
     hooks: {

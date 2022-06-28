@@ -1,0 +1,2 @@
+const { Ingredients } =require('../models');
+
