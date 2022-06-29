@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe that saves your life</title>
+</head>
+<body>
+    <div class="flex-column justify-space-around">
+        <header class="display-flex justify-space-between align-center p-2">
+            <h1>
+                <a href="/">Recipe that saves your life</a>
+            </h1>
+            <nav>
+                {{#if logged_in}}
+                <a href="/views/dashboard.handlebars">dashboard</a> |
+                <button class="no-button" id="logout">logout</button>
+                {{else}}
+                <a href="/views/login.handlebars">login</a>
+                {{/if}}
+            </nav>
+        </header>
+        <main class="container container-fluid mt-5">
+            {{{body}}}
+        </main>
+    </div>
+</body>
+</html>
