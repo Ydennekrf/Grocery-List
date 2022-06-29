@@ -25,18 +25,21 @@ Recipes.init({
         type: DataTypes.INTEGER,
         allowNull: true,
     },
-    ingredient_id: {
+    ingredients_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: 'ingredients',
             key: 'id'
         }
-
     },
     amount: {
-        type: DataTypes.INTEGER,
-        allowNull: false
+        type: DataTypes.DECIMAL(10,2),
+        allowNull: false,
+        references: {
+            model: 'stock',
+            key: 'id'
+        }
     },
     user_id: {
         type: DataTypes.INTEGER,
