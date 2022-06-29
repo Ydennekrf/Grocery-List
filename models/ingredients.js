@@ -9,17 +9,101 @@ class Ingredients extends Model {}
             primaryKey: true,
             autoIncrement: true
         },
-        item: {
+        item1: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
             unique: true,
             validate: {
                 len: [2,25]
             }
         },
-        stock: {
-            type: DataTypes.INTEGER,
+        item2: {
+            type: DataTypes.STRING,
             allowNull: true,
+            unique: true,
+            validate: {
+                len: [2,25]
+            }
+        },
+        item3: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            unique: true,
+            validate: {
+                len: [2,25]
+            }
+        },
+        item4: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            unique: true,
+            validate: {
+                len: [2,25]
+            }
+        },
+        item5: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            unique: true,
+            validate: {
+                len: [2,25]
+            }
+        },
+        item6: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            unique: true,
+            validate: {
+                len: [2,25]
+            }
+        },
+        item7: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            unique: true,
+            validate: {
+                len: [2,25]
+            }
+        },
+        item8: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            unique: true,
+            validate: {
+                len: [2,25]
+            }
+        },
+        item9: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            unique: true,
+            validate: {
+                len: [2,25]
+            }
+        },
+        item10: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            unique: true,
+            validate: {
+                len: [2,25]
+            }
+        },
+        item11: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            unique: true,
+            validate: {
+                len: [2,25]
+            }
+        },
+        item12: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            unique: true,
+            validate: {
+                len: [2,25]
+            }
         },
         },
         {
