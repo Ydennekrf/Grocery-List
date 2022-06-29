@@ -10,13 +10,29 @@ class RecipeIngredient extends Model {}
             autoIncrement: true
         },
         recipe_id: {
-
+            type: DataTypes.INTEGER,
+            references: {
+                model: "recipes",
+                key: "id"
+            }
         },
         ingredient_id: {
-
+            type: DataTypes.INTEGER,
+            references: {
+                model: "ingredients",
+                key: "id"
+            }
+        },
+        grocery_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: "grocery",
+                key: "id"
+            }
         },
         amount: {
-
+            type: DataTypes.DECIMAL(5,2),
+            allowNull: false
         }
         },
         {

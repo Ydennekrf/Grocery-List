@@ -10,10 +10,18 @@ class Ingredients extends Model {}
             autoIncrement: true
         },
         title: {
-
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [2, 15]
+            }
         },
         unit_id: {
-
+            type: DataTypes.INTEGER,
+            references: {
+                model: "unit",
+                key: "id"
+            }
         }
         },
         {

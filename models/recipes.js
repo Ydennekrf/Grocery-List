@@ -25,11 +25,11 @@ Recipes.init({
         type: DataTypes.INTEGER,
         allowNull: true,
     },
-    user_id: {
+    grocery_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'users',
+            model: 'grocery',
             key: 'id'
         }
     }
