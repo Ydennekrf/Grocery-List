@@ -17,29 +17,13 @@ Recipes.init({
             isAlphanumeric: true
         }
     },
-    productionMethod: {
+    instructions: {
         type: DataTypes.STRING,
         allowNull: true
     },
     servings: {
         type: DataTypes.INTEGER,
         allowNull: true,
-    },
-    ingredients_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'ingredients',
-            key: 'id'
-        }
-    },
-    amount: {
-        type: DataTypes.DECIMAL(10,2),
-        allowNull: false,
-        references: {
-            model: 'stock',
-            key: 'id'
-        }
     },
     user_id: {
         type: DataTypes.INTEGER,

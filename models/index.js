@@ -1,7 +1,7 @@
 const Users = require('./users');
 const Recipes = require('./recipes');
 const Ingredients = require('./ingredients');
-const Stock = require('./ingredientstock')
+const Stock = require('./recipeIngredient')
 
 Users.hasMany(Recipes, {
     foreignKey: 'user_id'
