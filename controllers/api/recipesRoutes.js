@@ -1,8 +1,8 @@
-const router = require('express').Router();
-const { Recipes } = require('../../models');
-const withAuth = require('../../utils/auth');
+// const router = require('express').Router();
+// const { Recipes } = require('../../models');
+// const withAuth = require('../../utils/auth');
 
 
-//router.put
-//router.post
-module.exports = router;
+// //router.put
+// //router.post
+// module.exports = router;

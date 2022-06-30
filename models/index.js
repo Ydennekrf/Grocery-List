@@ -14,31 +14,19 @@ Grocery.belongsTo(Users, {
 Grocery.hasMany(Recipes, {
     foreignKey: 'grocery_id'
 });
-Grocery.hasMany(RecipeIngredient, {
-    foreignKey: 'grocery_id'
+Recipes.belongsToMany(Ingredients, {
+    through: RecipeIngredient,
+    foreignKey: 'recipe_id',
 });
-Recipes.belongsTo(Grocery, {
-    foreignKey: 'grocery_id'
-});
-Recipes.hasMany(RecipeIngredient, {
-    foreignKey: 'recipe_id'
-});
-RecipeIngredient.belongsTo(Recipes, {
-    foreignKey: 'recipe_id'
-});
-RecipeIngredient.belongsTo(Grocery, {
-    foreignKey: 'grocery_id'
-});
-RecipeIngredient.hasMany(Ingredients, {
+Ingredients.belongsToMany(Recipes, {
+    through: RecipeIngredient,
     foreignKey: 'ingredient_id'
-});
-Ingredients.belongsTo(RecipeIngredient, {
-    foreignKey: 'ingredient_id'
-});
-Ingredients.hasOne(Units, {
+})
+
+Ingredients.belongsTo(Units, {
     foreignKey: 'unit_id'
 });
-Units.belongsTo(Ingredients, {
+Units.hasOne(Ingredients, {
     foreignKey: 'unit_id'
 });
 

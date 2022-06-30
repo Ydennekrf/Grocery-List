@@ -23,15 +23,8 @@ class RecipeIngredient extends Model {}
                 key: "id"
             }
         },
-        grocery_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: "grocery",
-                key: "id"
-            }
-        },
         amount: {
-            type: DataTypes.DECIMAL(5,2),
+            type: DataTypes.DECIMAL(10,2),
             allowNull: false
         }
         },

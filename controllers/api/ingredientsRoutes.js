@@ -1,9 +1,9 @@
-const router = require('express').Router();
-const { Ingredients } = require('../../models');
-const withAuth = require('../../utils/auth');
+// const router = require('express').Router();
+// const { Ingredients } = require('../../models');
+// const withAuth = require('../../utils/auth');
 
 
-//router.get
-//router.put
-module.exports = router;
+// //router.get
+// //router.put
+// module.exports = router;
 

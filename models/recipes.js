@@ -5,7 +5,7 @@ class Recipes extends Model {}
 
 Recipes.init({
     id: {
-        type: DataTypes.INTGER,
+        type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true
@@ -18,7 +18,7 @@ Recipes.init({
         }
     },
     instructions: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true
     },
     servings: {
@@ -27,7 +27,7 @@ Recipes.init({
     },
     grocery_id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
         references: {
             model: 'grocery',
             key: 'id'

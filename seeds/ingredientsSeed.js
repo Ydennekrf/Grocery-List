@@ -114,4 +114,8 @@ const ingredientSeed = [{
 },{
     title: "olive oil",
     unit_id: 4
-},]
+}]
+
+const ingredientsSeeding = () => Ingredients.bulkCreate(ingredientSeed);
+
+module.exports = ingredientsSeeding;
