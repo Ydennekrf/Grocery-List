@@ -21,7 +21,7 @@ router.get('/newUser', (req, res) => {
         res.redirect('/');
         return;
     }
-    res.render('createUser');
+    res.render('login');
 });
 
 

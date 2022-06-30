@@ -4,27 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe that saves your life</title>
-    <link rel="stylesheet" href="/public/css/style.css"
+    <title>Recipes that saves your life</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" type="css" href="../../public/css/style.css">
 </head>
-<body>
-    <div class="flex-column justify-space-around">
-        <header class="display-flex justify-space-between align-center p-2">
-            <h1>
-                <a href="/">Recipe that saves your life</a>
-            </h1>
-            <nav>
-                {{#if logged_in}}
-                <a href="/views/dashboard.handlebars">dashboard</a> |
-                <button class="no-button" id="logout">logout</button>
-                {{else}}
-                <a href="/views/login.handlebars">login</a>
-                {{/if}}
-            </nav>
-        </header>
+<header>
+    <div class="jumbotron jumbotron-fluid jumbo">
+        <div class="container" >
+          <h1 class="display-4">Grocery List Creator</h1>
+        </div>
+<nav class="navbar navbar-expand-lg navbar-light header">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      {{#if loggedIn}}
+      <a class="nav-link active" href="../recipe.handlebars">Whats for dinner?</a>
+      <a class="nav-link" href="../grocery.handlebars">Grocery List</a>
+      <a class="nav-link" href="../home.handlebars">log out</a>
+      {{else}}
+      <a class="nav-link" href="../login.handlebars">login</a>
+      <a class="nav-link" href="../login.handlebars">sign up</a>
+      {{/if}}
+    </div>
+  </div>
+</nav>
+</header>
         <main class="container container-fluid mt-5">
             {{{body}}}
         </main>
-    </div>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
 </html>
