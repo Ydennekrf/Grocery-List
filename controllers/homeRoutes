@@ -1,18 +1,30 @@
-// const router = require('express').Router();
-// const { Ingredients, Recipes, Users } = require('../models');
-// const withAuth = require('../utils/auth');
+const router = require('express').Router();
+const { Grocery, Recipes, Users, Ingredients, RecipeIngredient } = require('../models');
+const  Units  =require('../models/units');
+const withAuth = require('../utils/auth');
 
-// //router.get('/', async (req, res) => {})
+// renders the home page on start up
+router.get('/', (req, res) => { 
+res.render('home')
+});
+// send user to login page
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+    res.render('login');
+});
+// sends user to the sign up page
+router.get('/newUser', (req, res) => {
+    if(req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+    res.render('createUser');
+});
 
-// //router.get('/login', (req, res) => {
 
-// //router.get('/project/:id', async (req, res) => {}
-
-// //router.get('/profile', withAuth, async (req, res) => {}
-
-// //router.get('/signup', (req, res) => {}
-
-
-// module.exports = router;
+module.exports = router;
 
   
