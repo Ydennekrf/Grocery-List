@@ -1,10 +1,10 @@
 <div>
 <h2 class="head-text">dashboard: your recipes</h2>
-<a href="/views/grocery.handlebars"><button type="button" class="btn btn-primary button">Grocery List</button></a>
 
     <nav>
             {{#if logged_in}}
-            <a href="/views/home.handlebars">home</a> |
+            <a href="/views/home.handlebars">home</a>
+            <a href="/views/grocery.handlebars">Grocery List</a>
             <button class="no-button" id="logout">logout</button>
             {{else}}
             <a href="/views/login.handlebars">login</a>
@@ -25,6 +25,6 @@
 {{/each}}
 
 {{else}}
-<p class="align-text-center">No current recipes, create a new recipe!</p>
+<p class="align-text-center">No current recipes, get a new recipe!</p>
 
 {{/if}}
