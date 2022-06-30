@@ -39,11 +39,8 @@ Users.init({
         }
     },
     phone: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.BIGINT,
         allowNull: false,
-        validate: {
-            len: [10,10]
-        }
     }
 
     

@@ -1,4 +1,4 @@
-const { Units } = require('../models');
+const Units =require('../models/units');
 
 unitsSeed = [{
     name: 'grams'

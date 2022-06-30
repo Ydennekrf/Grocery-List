@@ -9,20 +9,6 @@ class Grocery extends Model {}
             primaryKey: true,
             autoIncrement: true
         },
-        recipe_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: "recipes",
-                key: "id"
-            }
-        },
-        recipeIngredient_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: "recipeIngredient",
-                key: "id"
-            }
-        }
     },
     {
         sequelize,

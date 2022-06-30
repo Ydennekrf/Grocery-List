@@ -19,7 +19,7 @@ class Ingredients extends Model {}
         unit_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: "unit",
+                model: "units",
                 key: "id"
             }
         }

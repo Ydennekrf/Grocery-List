@@ -12,7 +12,12 @@ Units.init({
     name: {
         type: DataTypes.STRING,
         allowNull: false
-    }
+    },
+},{
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'units'
 });
 
 module.exports = Units
