@@ -4,7 +4,16 @@ const  Units  =require('../../models/units');
 const withAuth = require('../../utils/auth');
 // get all recipe data
 router.get('/', (req,res) => {
-    Recipes.findAll({    
+    Recipes.findAll({ 
+        include: [{
+            model: RecipeIngredient,
+        },
+        {
+            model: Ingredients,
+        include:[{
+            model: Units
+        }]
+    }]
     })
     .then(dbpost => res.json(dbpost))
     .catch(err => {

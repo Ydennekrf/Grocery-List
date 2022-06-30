@@ -18,6 +18,12 @@ Recipes.belongsToMany(Ingredients, {
     through: RecipeIngredient,
     foreignKey: 'recipe_id',
 });
+Recipes.hasMany(RecipeIngredient, {
+    foreignKey: 'recipe_id'
+})
+RecipeIngredient.belongsTo(Recipes, {
+    foreignKey: 'recipe_id',
+});
 Ingredients.belongsToMany(Recipes, {
     through: RecipeIngredient,
     foreignKey: 'ingredient_id'
