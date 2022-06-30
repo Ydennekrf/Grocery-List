@@ -1,0 +1,349 @@
+const RecipeIngredient = require('../models');
+
+const recipeIngredientSeed = [
+    {
+    recipe_id: 1,
+    ingredient_id: 1,
+    grocery_id: 1,
+    amount: 0.25,
+},   {
+    recipe_id: 1,
+    ingredient_id: 2,
+    grocery_id: 1,
+    amount: 1,
+},   {
+    recipe_id: 1,
+    ingredient_id: 3,
+    grocery_id: 1,
+    amount: 6,
+},   {
+    recipe_id: 1,
+    ingredient_id: 4,
+    grocery_id: 1,
+    amount: 250,
+},   {
+    recipe_id: 1,
+    ingredient_id: 5,
+    grocery_id: 1,
+    amount: 50,
+},   {
+    recipe_id: 1,
+    ingredient_id: 6,
+    grocery_id: 1,
+    amount: 500,
+},   {
+    recipe_id: 1,
+    ingredient_id: 7,
+    grocery_id: 1,
+    amount: 75,
+},   {
+    recipe_id: 1,
+    ingredient_id: 8,
+    grocery_id: 1,
+    amount: 50,
+},   {
+    recipe_id: 1,
+    ingredient_id: 9,
+    grocery_id: 1,
+    amount: 5,
+},   {
+    recipe_id: 1,
+    ingredient_id: 10,
+    grocery_id: 1,
+    amount: 5,
+},   {
+    recipe_id: 1,
+    ingredient_id: 11,
+    grocery_id: 1,
+    amount: 0.25,
+},   {
+    recipe_id: 2,
+    ingredient_id: 12,
+    grocery_id: 1,
+    amount: 1,
+},   {
+    recipe_id: 2,
+    ingredient_id: 13,
+    grocery_id: 1,
+    amount: 250,
+},   {
+    recipe_id: 2,
+    ingredient_id: 14,
+    grocery_id: 1,
+    amount: 0.25,
+},   {
+    recipe_id: 2,
+    ingredient_id: 1,
+    grocery_id: 1,
+    amount: 1,
+},   {
+    recipe_id: 2,
+    ingredient_id: 2,
+    grocery_id: 1,
+    amount: 3,
+},   {
+    recipe_id: 2,
+    ingredient_id: 15,
+    grocery_id: 1,
+    amount: 500,
+},   {
+    recipe_id: 2,
+    ingredient_id: 8,
+    grocery_id: 1,
+    amount: 100,
+},   {
+    recipe_id: 2,
+    ingredient_id: 16,
+    grocery_id: 1,
+    amount: 50,
+},   {
+    recipe_id: 2,
+    ingredient_id: 17,
+    grocery_id: 1,
+    amount: 1,
+},   {
+    recipe_id: 2,
+    ingredient_id: 9,
+    grocery_id: 1,
+    amount: 5,
+},   {
+    recipe_id: 2,
+    ingredient_id: 10,
+    grocery_id: 1,
+    amount: 5,
+},   {
+    recipe_id: 2,
+    ingredient_id: 11,
+    grocery_id: 1,
+    amount: 0.5,
+},   {
+    recipe_id: 3,
+    ingredient_id: 18,
+    grocery_id: 1,
+    amount: 10,
+},   {
+    recipe_id: 3,
+    ingredient_id: 19,
+    grocery_id: 1,
+    amount: 500,
+},   {
+    recipe_id: 3,
+    ingredient_id: 20,
+    grocery_id: 1,
+    amount: 2,
+},   {
+    recipe_id: 3,
+    ingredient_id: 21,
+    grocery_id: 1,
+    amount: 500,
+},   {
+    recipe_id: 3,
+    ingredient_id: 22,
+    grocery_id: 1,
+    amount: 1.2,
+},   {
+    recipe_id: 3,
+    ingredient_id: 23,
+    grocery_id: 1,
+    amount: 2.25,
+},   {
+    recipe_id: 3,
+    ingredient_id: 24,
+    grocery_id: 1,
+    amount: 500,
+},   {
+    recipe_id: 3,
+    ingredient_id: 25,
+    grocery_id: 1,
+    amount: 1,
+},   {
+    recipe_id: 3,
+    ingredient_id: 9,
+    grocery_id: 1,
+    amount: 10,
+},   {
+    recipe_id: 3,
+    ingredient_id: 10,
+    grocery_id: 1,
+    amount: 10,
+},   {
+    recipe_id: 4,
+    ingredient_id: 22,
+    grocery_id: 1,
+    amount: 2,
+},   {
+    recipe_id: 4,
+    ingredient_id: 19,
+    grocery_id: 1,
+    amount: 1000,
+},   {
+    recipe_id: 4,
+    ingredient_id: 26,
+    grocery_id: 1,
+    amount: 0.5,
+},   {
+    recipe_id: 4,
+    ingredient_id: 27,
+    grocery_id: 1,
+    amount: 3,
+},   {
+    recipe_id: 4,
+    ingredient_id: 28,
+    grocery_id: 1,
+    amount: 125,
+},   {
+    recipe_id: 4,
+    ingredient_id: 29,
+    grocery_id: 1,
+    amount: 0.5,
+},   {
+    recipe_id: 4,
+    ingredient_id: 9,
+    grocery_id: 1,
+    amount: 15,
+},   {
+    recipe_id: 4,
+    ingredient_id: 10,
+    grocery_id: 1,
+    amount: 15,
+},   {
+    recipe_id: 4,
+    ingredient_id: 5,
+    grocery_id: 1,
+    amount: 0.5,
+},   {
+    recipe_id: 5,
+    ingredient_id: 13,
+    grocery_id: 1,
+    amount: 500,
+},   {
+    recipe_id: 5,
+    ingredient_id: 19,
+    grocery_id: 1,
+    amount: 500,
+},   {
+    recipe_id: 5,
+    ingredient_id: 16,
+    grocery_id: 1,
+    amount: 250,
+},   {
+    recipe_id: 5,
+    ingredient_id: 27,
+    grocery_id: 1,
+    amount: 2,
+},   {
+    recipe_id: 5,
+    ingredient_id: 9,
+    grocery_id: 1,
+    amount: 5,
+},   {
+    recipe_id: 5,
+    ingredient_id: 10,
+    grocery_id: 1,
+    amount: 5,
+},   {
+    recipe_id: 5,
+    ingredient_id: 30,
+    grocery_id: 1,
+    amount: 50,
+},   {
+    recipe_id: 5,
+    ingredient_id: 3,
+    grocery_id: 1,
+    amount: 10,
+},   {
+    recipe_id: 5,
+    ingredient_id: 31,
+    grocery_id: 1,
+    amount: 150,
+},   {
+    recipe_id: 6,
+    ingredient_id: 32,
+    grocery_id: 1,
+    amount: 1,
+},   {
+    recipe_id: 6,
+    ingredient_id: 1,
+    grocery_id: 1,
+    amount: 3,
+},   {
+    recipe_id: 6,
+    ingredient_id: 23,
+    grocery_id: 1,
+    amount: 3,
+},   {
+    recipe_id: 6,
+    ingredient_id: 33,
+    grocery_id: 1,
+    amount: 2,
+},   {
+    recipe_id: 6,
+    ingredient_id: 34,
+    grocery_id: 1,
+    amount: 2,
+},   {
+    recipe_id: 6,
+    ingredient_id: 13,
+    grocery_id: 1,
+    amount: 75,
+},   {
+    recipe_id: 6,
+    ingredient_id: 35,
+    grocery_id: 1,
+    amount: 75,
+},   {
+    recipe_id: 6,
+    ingredient_id: 30,
+    grocery_id: 1,
+    amount: 35,
+},   {
+    recipe_id: 7,
+    ingredient_id: 36,
+    grocery_id: 1,
+    amount: 250,
+},   {
+    recipe_id: 7,
+    ingredient_id: 9,
+    grocery_id: 1,
+    amount: 500,
+},   {
+    recipe_id: 7,
+    ingredient_id: 15,
+    grocery_id: 1,
+    amount: 500,
+},   {
+    recipe_id: 7,
+    ingredient_id: 30,
+    grocery_id: 1,
+    amount: 125,
+},   {
+    recipe_id: 7,
+    ingredient_id: 37,
+    grocery_id: 1,
+    amount: 10,
+},   {
+    recipe_id: 7,
+    ingredient_id: 38,
+    grocery_id: 1,
+    amount: 35,
+},   {
+    recipe_id: 7,
+    ingredient_id: 9,
+    grocery_id: 1,
+    amount: 2,
+},   {
+    recipe_id: 7,
+    ingredient_id: 10,
+    grocery_id: 1,
+    amount: 5,
+},   {
+    recipe_id: 7,
+    ingredient_id: 19,
+    grocery_id: 1,
+    amount: 35,
+}
+]
+
+const recipeIngredientSeeding = () => RecipeIngredient.bulkCreate(recipeIngredientSeed);
+
+module.exports = recipeIngredientSeeding;
