@@ -25,6 +25,7 @@ router.get('/', (req,res) => {
     })
 });
 
+
 router.get('/home', (req,res) => {
     Recipes.findAll({ 
         include: [{
@@ -48,7 +49,6 @@ router.get('/home', (req,res) => {
         res.status(500).json(err);
     })
 });
-
 
 
 module.exports = router;
