@@ -5,15 +5,14 @@ function register(event){
     event.preventDefault();
 
  console.log(document.forms[0].checkValidity());
-    fetch('api/register', {
+    fetch('api/users', {
         method: 'POST',
         body: JSON.stringify({
-            firstName: document.getElementById("firstName").value,
-            lastName: document.getElementById("lastName").value,
-            email: document.getElementById("email").value,
-            number: document.getElementById("number").value,
-            password: document.getElementById("password").value,
-            passwordConfirmation: document.getElementById("confirmPassword").value
+            Name: document.getElementById("#name-signup").value,
+            email: document.getElementById("#email-signup").value,
+            number: document.getElementById("#number-signup").value,
+            password: document.getElementById("#password-signup").value,
+           
         }),
         headers: {
             'Content-Type': 'application/json',

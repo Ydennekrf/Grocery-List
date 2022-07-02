@@ -13,6 +13,7 @@ router.get('/login', (req, res) => {
         res.redirect('/');
         return;
     }
+    console.log("login")
     res.render('login');
 });
 // sends user to the sign up page
@@ -21,6 +22,7 @@ router.get('/newUser', (req, res) => {
         res.redirect('/');
         return;
     }
+    console.log("login")
     res.render('login');
 });
 
