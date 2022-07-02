@@ -25,7 +25,7 @@ const recipeSeed = [{
     instructions: " 1. ",
     servings: 8,
 },{
-    title: "Red Wine salt roast Beets with Ricotta cheese and arugula.",
+    title: "Red Wine salt roast Beets with Ricotta cheese and arugula",
     instructions: "1. ",
     servings: 4,
 }]
