@@ -25,5 +25,30 @@ router.get('/', (req,res) => {
     })
 });
 
+router.get('/home', (req,res) => {
+    Recipes.findAll({ 
+        include: [{
+            model: RecipeIngredient,
+        },
+        {
+            model: Ingredients,
+        include:[{
+            model: Units
+        }]
+    }]
+    })
+    .then(dbpost => 
+        
+        res.json(dbpost))
+    .then(
+        
+    )
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
+});
+
+
 
 module.exports = router;
