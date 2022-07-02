@@ -80,10 +80,10 @@ router.post('/logout', (req, res) => {
 
 // creates a new user
 router.post('/', (req, res) => {
-  User.create({
+  Users.create({
     username: req.body.username,
     email: req.body.email,
-    number: req.bosy.number,
+    phone: req.body.phone,
     password: req.body.password,
 
   })
