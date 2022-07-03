@@ -78,25 +78,47 @@ router.post('/logout', (req, res) => {
 });
 
 
-// creates a new user
-router.post('/', (req, res) => {
-  User.create({
-    username: req.body.username,
-    email: req.body.email,
-    number: req.bosy.number,
-    password: req.body.password,
+// // creates a new user
+// router.post('/', (req, res) => {
+//   Users.create({
+//     username: req.body.username,
+//     email: req.body.email,
+//     number: req.body.number,
+//     password: req.body.password,
 
-  })
-  .then(dbUserData => {
-    req.session.save(() => {
-      req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
-      req.session.number = dbUserData.number;
-      req.session.loggedIn = true;
+//   })
+//   .then(dbUserData => {
+//     req.session.save(() => {
+//       req.session.user_id = dbUserData.id;
+//       req.session.username = dbUserData.username;
+//       req.session.number = dbUserData.number;
+//       req.session.loggedIn = true;
   
-      res.json(dbUserData);
+//       res.json(dbUserData);
+//     });
+//   });
+// });
+
+//adds new user to database
+router.post('/', async (req, res) => {
+  try {
+    const dbUserData = await Users.create({
+      username: req.body.username,
+      email: req.body.email,
+      phone: req.body.phone,
+      password: req.body.password,
     });
-  });
+
+    req.session.save(() => {
+      req.session.loggedIn = true;
+
+      res.status(200).json(dbUserData);
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
+
