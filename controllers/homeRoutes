@@ -26,6 +26,46 @@ router.get('/newUser', (req, res) => {
     res.render('login');
 });
 
+//Showing Grocery dashboard to user and using the custom middleware before allowing the user to access the Grocery dashboard
+
+router.get('/grocery/:id', withAuth, async (req, res) => {
+    try {
+      const dbGroceryData = await Grocery.findByPk(req.params.id, {
+        include: [
+          {
+            model: Recipes,
+            attributes: [
+              'id',
+              'title'
+            ],
+          },
+        ],
+      });
+  
+      const grocery = dbGroceryData.get({ plain: true });
+      res.render('dashboard', { grocery, loggedIn: req.session.loggedIn });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
+  
+ // Showing one recipe and using custom middleware before allowing the user to access the recipe
+router.get('/recipe/:id', withAuth, async (req, res) => {
+    try {
+      const dbRecipeData = await Recipes.findByPk(req.params.id);
+  
+      const recipe = dbRecipeData.get({ plain: true });
+
+      res.render('recipe', { recipe, loggedIn: req.session.loggedIn });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  });
+
+
+
 
 module.exports = router;
 
