@@ -24,14 +24,6 @@ Recipes.init({
     servings: {
         type: DataTypes.INTEGER,
         allowNull: true,
-    },
-    grocery_id: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        references: {
-            model: 'grocery',
-            key: 'id'
-        }
     }
 
 },

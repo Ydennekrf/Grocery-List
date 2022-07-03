@@ -1,5 +1,4 @@
-const accountSid = 'AC96a9c8d61eb097adbe636e8174ed1a01';
-const authToken = 'aa8fe373be9c9455d34dddd96650f0b3';
+
 const twilio = require('twilio');
 
 

@@ -2,18 +2,15 @@ const Users = require('./users');
 const Recipes = require('./recipes');
 const Ingredients = require('./ingredients');
 const Units = require('./units');
-const Grocery = require('./grocery');
 const RecipeIngredient = require('./recipeIngredient');
 
-Users.hasOne(Grocery, {
+
+Users.hasMany(Recipes, {
     foreignKey: 'user_id'
 });
-Grocery.belongsTo(Users, {
+Recipes.belongsTo(Users, {
     foreignKey: 'user_id'
-});
-Grocery.hasMany(Recipes, {
-    foreignKey: 'grocery_id'
-});
+})
 Recipes.belongsToMany(Ingredients, {
     through: RecipeIngredient,
     foreignKey: 'recipe_id',
@@ -37,4 +34,4 @@ Units.hasOne(Ingredients, {
 });
 
 
-module.exports = {Users, Recipes, Ingredients, Grocery, RecipeIngredient};
+module.exports = {Users, Recipes, Ingredients, RecipeIngredient};
