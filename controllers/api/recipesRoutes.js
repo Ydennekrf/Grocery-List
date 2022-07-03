@@ -18,7 +18,7 @@ router.get('/', (req,res) => {
     .then(dbpost => 
         
         res.json(dbpost))
-    .then(localStorage.setItem("recipeData", JSON.stringify(dbpost)))
+    // .then(localStorage.setItem("recipeData", JSON.stringify(dbpost)))
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -41,7 +41,7 @@ router.get('/home', (req,res) => {
         
         res.json(dbpost))
     .then(
-        
+
     )
     .catch(err => {
         console.log(err);

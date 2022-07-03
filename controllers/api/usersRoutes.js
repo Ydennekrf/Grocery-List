@@ -58,7 +58,7 @@ router.post('/login', (req, res) => {
       // declare session variables
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
-      req.session.number = dbdUserData.number;
+      req.session.number = dbUserData.number;
       req.session.loggedIn = true;
 
       res.json({ user: dbUserData, message: 'You are now logged in!' });
@@ -81,6 +81,7 @@ router.post('/logout', (req, res) => {
 // creates a new user
 router.post('/', (req, res) => {
   Users.create({
+    
     username: req.body.username,
     email: req.body.email,
     phone: req.body.phone,
