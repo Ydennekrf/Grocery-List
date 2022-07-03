@@ -53,21 +53,31 @@ const withAuth = require('../../utils/auth');
 
 //get all recipes data
 router.get('/', async (req, res) => {
-    try {
-      const dbRecipeData = await Recipes.findAll();
-  
-      const recipes = dbRecipeData.map((recipe) =>
-        recipe.get({ plain: true })
-      );
-  
-      res.render('home', {
-        recipes,
-        loggedIn: req.session.loggedIn,
-      });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-  });
+  try {
+    const dbRecipeData = await Recipes.findAll({ 
+              include: [{
+                  model: RecipeIngredient,
+              },
+              {
+                  model: Ingredients,
+              include:[{
+                  model: Units
+              }]
+          }]
+          });
+
+    const recipes = dbRecipeData.map((recipe) =>
+      recipe.get({ plain: true })
+    );
+console.log(recipes);
+    res.render('home', {
+      recipes,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
