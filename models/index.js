@@ -2,7 +2,6 @@ const Users = require('./users');
 const Recipes = require('./recipes');
 const Ingredients = require('./ingredients');
 const Units = require('./units');
-const Grocery = require('./grocery');
 const RecipeIngredient = require('./recipeIngredient');
 
 
@@ -35,4 +34,4 @@ Units.hasOne(Ingredients, {
 });
 
 
-module.exports = {Users, Recipes, Ingredients, Grocery, RecipeIngredient};
+module.exports = {Users, Recipes, Ingredients, RecipeIngredient};
