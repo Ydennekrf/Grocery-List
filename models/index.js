@@ -5,12 +5,6 @@ const Units = require('./units');
 const RecipeIngredient = require('./recipeIngredient');
 
 
-Users.hasMany(Recipes, {
-    foreignKey: 'user_id'
-});
-Recipes.belongsTo(Users, {
-    foreignKey: 'user_id'
-})
 Recipes.belongsToMany(Ingredients, {
     through: RecipeIngredient,
     foreignKey: 'recipe_id',

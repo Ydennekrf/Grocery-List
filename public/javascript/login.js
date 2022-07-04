@@ -1,5 +1,5 @@
 const loginFormHandler = async (event) => {
-  console.log("hello")
+  
     event.preventDefault();
   
     // Collect values from the login form
@@ -16,7 +16,7 @@ const loginFormHandler = async (event) => {
   
       if (response.ok) {
         // If successful, redirect the browser to the profile page
-        document.location.replace('/dashboard');
+        document.location.replace('/api/recipes/dashboard');
       } else {
         alert(response.statusText);
       }
@@ -41,7 +41,7 @@ const loginFormHandler = async (event) => {
   
       if (response.ok) {
         console.log(response);
-        document.location.replace('/dashboard');
+        document.location.replace('/api/recipes/dashboard');
       }
        else {
         alert(response.statusText);
@@ -50,8 +50,8 @@ const loginFormHandler = async (event) => {
   };
   
   document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
+    .querySelector('#login')
+    .addEventListener('click', loginFormHandler);
   
   document
     .querySelector('#sign-up')
