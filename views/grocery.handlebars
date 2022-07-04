@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="groceries">
+        <h1 style="text-align: center;">Grocery List</h1>
+    </div>
+    <br>
+    {{#if recipeIngredient.length}}
+  <div class="col-md-6 recipeIngredient-list">
+
+    {{#each recipeIngredients as |recipeIngredient|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/recipeIngredient/{{recipeIngredient.id}}">{{recipeIngredient.name}}+{{recipeIngredient.amount}}</a></h4>
+      
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+</div>
+
+<script src="/models/recipeIngredient.js"></script>
