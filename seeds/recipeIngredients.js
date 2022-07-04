@@ -173,7 +173,7 @@ const recipeIngredientSeed = [
 },   {
     recipe_id: 4,
     ingredient_id: 5,
-    amount: 0.5,
+    amount: 500,
 }, 
   {
     recipe_id: 5,

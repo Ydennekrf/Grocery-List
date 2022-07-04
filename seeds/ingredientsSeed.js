@@ -11,7 +11,7 @@ const ingredientSeed = [{
     unit_id: 5
 },{
     title: "aborio rice",
-    unit_id: 2
+    unit_id: 1
 },{
     title: "white wine",
     unit_id: 4
