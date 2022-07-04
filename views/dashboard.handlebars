@@ -1,24 +1,11 @@
 <div>
-<h2 class="head-text">dashboard: your recipes</h2>
-
-    <nav>
-            {{#if logged_in}}
-            <a href="/views/home.handlebars">home</a>
-            <a href="/views/grocery.handlebars">Grocery List</a>
-            <button class="no-button" id="logout">logout</button>
-            {{else}}
-            <a href="/views/login.handlebars">login</a>
-            {{/if}}
-    </nav>
-
 {{#if recipes.length}}
-</div>
 
 {{#each recipes as |recipe|}}
 
 <div class="recipe col-md-5">
     <p>
-        {{recipe.id}}.{{recipe.recipe_name}}
+        {{recipe.id}}.{{recipe.title}}
     </p>
 </div>
     
@@ -28,3 +15,8 @@
 <p class="align-text-center">No current recipes, get a new recipe!</p>
 
 {{/if}}
+</div>
+
+
+
+

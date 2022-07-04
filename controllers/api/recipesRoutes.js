@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const { Grocery, Recipes, Users, Ingredients, RecipeIngredient } = require('../../models');
+const {Recipes, Ingredients, RecipeIngredient } = require('../../models');
 const  Units  =require('../../models/units');
-const withAuth = require('../../utils/auth');
+
 // // get all recipe data
 // router.get('/', (req,res) => {
 //     Recipes.findAll({ 
@@ -50,11 +50,59 @@ const withAuth = require('../../utils/auth');
 //     })
 // });
 
+//user's dashboard page
+router.get('/dashboard', async (req, res) => {
+  try {
+    const dbRecipeData = await Recipes.findAll({ 
+              
+      include: [{
+          model: RecipeIngredient,
+      },
+      {
+          model: Ingredients,
+      include:[{
+          model: Units
+      }]
+  }],
+             
+  });
+    
+    const recipes = dbRecipeData.map((recipe) =>
+      recipe.get({ plain: true })
+    );
+console.log(recipes);
+    res.render('dashboard', {
+      recipes,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+
+
+//get single recipe data by id
+router.get('/:id', async (req, res) => {
+  try {
+    const dbRecipeData = await Recipes.findByPk(req.params.id);
+
+    const recipe = dbRecipeData.get({ plain: true });
+    console.log(recipe);
+    res.render('recipe', { recipe, logged_in: req.session.logged_in });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 
 //get all recipes data
 router.get('/', async (req, res) => {
   try {
     const dbRecipeData = await Recipes.findAll({ 
+              
               include: [{
                   model: RecipeIngredient,
               },
@@ -63,7 +111,8 @@ router.get('/', async (req, res) => {
               include:[{
                   model: Units
               }]
-          }]
+          }],
+                     
           });
 
     const recipes = dbRecipeData.map((recipe) =>
@@ -72,12 +121,15 @@ router.get('/', async (req, res) => {
 console.log(recipes);
     res.render('home', {
       recipes,
-      loggedIn: req.session.loggedIn,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
+
+
+
 
 module.exports = router;
