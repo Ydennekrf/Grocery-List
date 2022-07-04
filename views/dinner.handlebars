@@ -1,21 +1,18 @@
-<div class="recipe-card">
-    <div class="recipe-card-header">
-        {{recipe_name}}
-    </div>
-    </div>
-      <form class="add-recipe-form">
-        <h3>Recipes to add:</h3>
-        <input type="checkbox" id="dish1" name="dish-1" value="1">Mushroom Risotto</input><br>
-        <input type="checkbox" id="dish2" name="dish-2" value="2">10oz NY Strip with mashed potato and asparagus</input><br>
-        <input type="checkbox" id="dish3" name="dish-3" value="3">Home style Veal Lasagna</input><br>
-        <input type="checkbox" id="dish4" name="dish-4" value="4">Ricotta Veal Meatballs with grilled bread</input><br>
-        <input type="checkbox" id="dish5" name="dish-5" value="5">Ricotta Gnocchi with Mushrooms and Arugula</input><br>
-        <input type="checkbox" id="dish6" name="dish-6" value="6">Grilled Octopus with N'Duja sausage potatos arugula and a yellow pepper coulis</input><br>
-        <input type="checkbox" id="dish7" name="dish-7" value="7">Red Wine salt roast Beets with Ricotta cheese and arugula</input><br>
-      </form>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" id="recipe-select"data-id="{{recipe.id}}">ADD</button>
-      </div>
+<div>
+  <h2>Whats for dinner?</h2>
 </div>
+      <form class="recipe-select">
+        <h3>Recipes to add:</h3>
+        <label for="dish1"><input type="checkbox" id="dish1" name="dish" value="1">Mushroom Risotto</label><br>
+        <label for="dish1"><input type="checkbox" id="dish2" name="dish" value="2">10oz NY Strip with mashed potato and asparagus</label><br>
+        <label for="dish1"><input type="checkbox" id="dish3" name="dish" value="3">Home style Veal Lasagna</label><br>
+        <label for="dish1"><input type="checkbox" id="dish4" name="dish" value="4">Ricotta Veal Meatballs with grilled bread</label><br>
+        <label for="dish1"><input type="checkbox" id="dish5" name="dish" value="5">Ricotta Gnocchi with Mushrooms and Arugula</label><br>
+        <label for="dish1"><input type="checkbox" id="dish6" name="dish" value="6">Grilled Octopus with N'Duja sausage potatos arugula and a yellow pepper coulis</label><br>
+        <label for="dish1"><input type="checkbox" id="dish7" name="dish" value="7">Red Wine salt roast Beets with Ricotta cheese and arugula</label><br>
+        <input class="btn btn-sm btn-danger" type="submit" value="Create Grocery List" id="recipe-select">
+      </form>
+</div>
+<script src="/javascript/ingredients.js"></script>
 
 {{!-- create get route to bring to this page --}}

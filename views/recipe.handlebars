@@ -3,24 +3,9 @@
     <div class="recipe-card-header">
         {{recipe_name}}
     </div>
-    </div>
-      <form class="add-recipe-form">
-        <h3>Recipes to add:</h3>
-        <input type="checkbox" id="dish1" name="dish-1" value="1">Mushroom Risotto</input><br>
-        <input type="checkbox" id="dish2" name="dish-2" value="2">10oz NY Strip with mashed potato and asparagus</input><br>
-        <input type="checkbox" id="dish3" name="dish-3" value="3">Home style Veal Lasagna</input><br>
-        <input type="checkbox" id="dish4" name="dish-4" value="4">Ricotta Veal Meatballs with grilled bread</input><br>
-        <input type="checkbox" id="dish5" name="dish-5" value="5">Ricotta Gnocchi with Mushrooms and Arugula</input><br>
-        <input type="checkbox" id="dish6" name="dish-6" value="6">Grilled Octopus with N'Duja sausage potatos arugula and a yellow pepper coulis</input><br>
-        <input type="checkbox" id="dish7" name="dish-7" value="7">Red Wine salt roast Beets with Ricotta cheese and arugula</input><br>
-      </form>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" id="recipe-select"data-id="{{recipe.id}}">ADD</button>
-      </div>
-</div>
 
 <script src="/../public/javascript/ingredients.js"></script>
-=======
+
 
    <div class="card mb-3">
    <div class="card-body">
@@ -29,6 +14,8 @@
     <p class="card-text"> {{recipe.instructions}}</p>
      <h6>Servings:</h6>
     <p class="card-text">{{recipe.servings}}</p>
+      <h6>Ingredients:</h6>
+    <p class="card-text">{{recipe.ingredients}}</p>
   </div>
 </div>
 

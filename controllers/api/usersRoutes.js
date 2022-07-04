@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Users } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 router.post('/', async (req, res) => {
   try {
@@ -15,6 +16,18 @@ router.post('/', async (req, res) => {
     res.status(400).json(err);
   }
 });
+// used for sending text messege
+router.get('/sendMsg',  async(req, res) => {
+  try {
+    const userNum = await Users.findByPk(req.session.user_id,{
+    });
+    const userData = userNum.get({ plain: true });
+    console.log(`${userData.phone} and other stuff`);
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
 router.post('/login', async (req, res) => {
   try {
