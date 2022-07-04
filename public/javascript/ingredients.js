@@ -1,3 +1,6 @@
+var checks = document.getElementsByClassName('checks');
+var selected = document.getElementById('recipe-select');
+
 
 const dish1 = [
     ["onion:", 0.25, "piece(s)"],
@@ -90,49 +93,44 @@ const dish7 = [
     ["balsamic vinegar:", 10, "ml"],
     ["olive oil", 35, "ml"],
 ];
-let recipes = document.querySelector('#recipe-select')
-recipeSelect = () => {
-    let checkboxes = document.getElementsByName('dish');
-   
-    let values = [];
-    checkboxes.forEach((checkbox) => {
-        values.push(checkbox.value)
-    });
-    localStorage.setItem("testing", JSON.stringify(values))
-    console.log(values)
+
+selected.addEventListener("click", generateList);
+
+function generateList(){
+    var chosenRecipes = [];
+    var selectedRecipes = [];
+    var eliminateDuplicates = [];
+
+    localStorage.clear();
+    selected.disabled = true;
+
+    for (var i=0; i < 7; i++) {
+        if ( checks[i].checked === true ) {
+            chosenRecipes += checks[i].value + " ";
+        }
+    };
+    let chosenRecipesArray = chosenRecipes.split(' ');
+    let removeSpace = chosenRecipesArray.pop();
+
+    if (chosenRecipesArray.includes("1")) {selectedRecipes.push(dish1)};
+    if (chosenRecipesArray.includes("2")) {selectedRecipes.push(dish2)};
+    if (chosenRecipesArray.includes("3")) {selectedRecipes.push(dish3)};
+    if (chosenRecipesArray.includes("4")) {selectedRecipes.push(dish4)};
+    if (chosenRecipesArray.includes("5")) {selectedRecipes.push(dish5)}; 
+    if (chosenRecipesArray.includes("6")) {selectedRecipes.push(dish6)}; 
+    if (chosenRecipesArray.includes("7")) {selectedRecipes.push(dish7)};
+
+    const finalIngredients = selectedRecipes.flat();
+
+    for (var prop of finalIngredients) {
+        !eliminateDuplicates.some(value => value && value[0] === prop[0])
+        ? eliminateDuplicates.push(prop)
+        : eliminateDuplicates.forEach(value => {
+            if (value[0] === prop[0]) value [1] += prop[1]
+        });
+    };
+
+    ingredientList = (eliminateDuplicates.join('\n').replaceAll(',', ' '));
+
+    localStorage.setItem("GroceryList",ingredientList);
 };
-// recipes.addEventListener('submit', recipeSelect());
-
-
-// var chosenRecipes = [];
-
-// const selectedRecipes = chosenRecipes.flat();
-
-// var eliminateDuplicates = [];
-
-// for (var checkbox of checkboxes) {
-//     checkbox.addEventListener('click', function(){
-//         if(this.checked ==true) {
-//             chosenRecipes.push(this.value);
-//         } else {
-//             chosenRecipes = chosenRecipes.filter(e => e !== this.value);
-//         }
-//     })
-// };
-
-// for (var prop of selectedRecipes) {
-//     !eliminateDuplicates.some(value => value && value[0] === prop[0])
-//     ? eliminateDuplicates.push(prop)
-//     : eliminateDuplicates.forEach(value => {
-//         if (value[0] === prop[0]) value [1] += prop[1]
-//     });
-// };
-
-// ingredientList = (eliminateDuplicates.join('\n').replaceAll(',', ' '));
-
-
-// localStorage.setItem("ingredientList", JSON.stringify(ingredientList));
-
-
-
-
