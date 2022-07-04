@@ -1,14 +1,3 @@
-var checkboxes = document.querySelectorAll('.checkbox');
-
-for (var checkbox of checkboxes) {
-    checkbox.addEventListener('click', function(){
-        if(this.checked ==true) {
-            chosenRecipes.push(this.value);
-        } else {
-            chosenRecipes = chosenRecipes.filter(e => e !== this.value);
-        }
-    })
-};
 
 const dish1 = [
     ["onion:", 0.25, "piece(s)"],
@@ -101,23 +90,49 @@ const dish7 = [
     ["balsamic vinegar:", 10, "ml"],
     ["olive oil", 35, "ml"],
 ];
-
-
-var chosenRecipes = [];
-
-const selectedRecipes = chosenRecipes.flat();
-
-var eliminateDuplicates = [];
-
-for (var prop of selectedRecipes) {
-    !eliminateDuplicates.some(value => value && value[0] === prop[0])
-    ? eliminateDuplicates.push(prop)
-    : eliminateDuplicates.forEach(value => {
-        if (value[0] === prop[0]) value [1] += prop[1]
+let recipes = document.querySelector('#recipe-select')
+recipeSelect = () => {
+    let checkboxes = document.getElementsByName('dish');
+   
+    let values = [];
+    checkboxes.forEach((checkbox) => {
+        values.push(checkbox.value)
     });
+    localStorage.setItem("testing", JSON.stringify(values))
+    console.log(values)
 };
+// recipes.addEventListener('submit', recipeSelect());
 
-ingredientList = (eliminateDuplicates.join('\n').replaceAll(',', ' '));
+
+// var chosenRecipes = [];
+
+// const selectedRecipes = chosenRecipes.flat();
+
+// var eliminateDuplicates = [];
+
+// for (var checkbox of checkboxes) {
+//     checkbox.addEventListener('click', function(){
+//         if(this.checked ==true) {
+//             chosenRecipes.push(this.value);
+//         } else {
+//             chosenRecipes = chosenRecipes.filter(e => e !== this.value);
+//         }
+//     })
+// };
+
+// for (var prop of selectedRecipes) {
+//     !eliminateDuplicates.some(value => value && value[0] === prop[0])
+//     ? eliminateDuplicates.push(prop)
+//     : eliminateDuplicates.forEach(value => {
+//         if (value[0] === prop[0]) value [1] += prop[1]
+//     });
+// };
+
+// ingredientList = (eliminateDuplicates.join('\n').replaceAll(',', ' '));
 
 
-localStorage.setItem("ingredientList");
+// localStorage.setItem("ingredientList", JSON.stringify(ingredientList));
+
+
+
+

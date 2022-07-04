@@ -118,7 +118,7 @@ router.get('/', async (req, res) => {
     const recipes = dbRecipeData.map((recipe) =>
       recipe.get({ plain: true })
     );
-console.log(recipes);
+
     res.render('home', {
       recipes,
       logged_in: req.session.logged_in,
