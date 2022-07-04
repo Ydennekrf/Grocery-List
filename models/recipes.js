@@ -24,8 +24,8 @@ Recipes.init({
     servings: {
         type: DataTypes.INTEGER,
         allowNull: true,
-    }
-
+    },
+    
 },
 {
     sequelize,
