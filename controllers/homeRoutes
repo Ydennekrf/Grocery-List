@@ -37,6 +37,15 @@ router.get('/dinner', (req,res) => {
     res.render('login');
 });
 
+router.get('/grocery', (req, res) => {
+    if(req.session.logged_in) {
+        res.render('grocery');
+        return;
+    };
+    console.log('grocery');
+    res.render('login');
+})
+
 
 module.exports = router;
 
