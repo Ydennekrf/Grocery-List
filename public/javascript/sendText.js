@@ -1,24 +1,59 @@
-const twilio = require('twilio');
-require('dotenv').config();
+const textButton = document.getElementById('text-me');
+const groceryEl = document.getElementById('grocery-list');
+var groceryList;
 
-let groceryList = JSON.parse(localStorage.getItem("ingredientList"));
+var userPhone;
 
-sendtext = () => {
-    let recipeMsg = groceryList;
-    const client = new twilio(accountSid, authToken);
 
-    client.messages.create({
-        body: `Here is your Grocery List for your selected meals: ${recipeMsg}`,
-        to: `14168882462`,
-        from: '+18305875494'
-    })
-}
 
-console.log(groceryList);
+getUserData = async() => {
 
-getUserData = () => {
     const response = await fetch('/api/users/sendMsg', {
         method: 'GET',
-        body: JSON.
     })
+    // .then((data) => console.log(data.phone))
+    // .then(getGrocery());
+    const userPhoneHelp = await response.json();
+
+    userPhone = userPhoneHelp.phone
+ 
+    getGrocery();
 }
+getGrocery = () => {
+    groceryList = localStorage.getItem("GroceryList");
+    groceryEl.append(groceryList);
+    
+ 
+  
+}
+
+sendText = async(event) => {
+    event.preventDefault();
+    groceryList = localStorage.getItem("GroceryList");
+      
+    const response = await fetch('/api/grocery/send', {
+        method: 'POST',
+        body: JSON.stringify({
+            phone: userPhone, 
+            list: groceryList
+        }),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    });
+    if (response.ok) {
+        console.log(" grocery list sent");
+    } else {
+        console.log( 'unable to send text ');
+    }
+    
+}
+
+
+
+document.querySelector('#text-me').addEventListener('click', sendText);
+
+
+
+getUserData();
+

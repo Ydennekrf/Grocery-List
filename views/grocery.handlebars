@@ -3,20 +3,10 @@
         <h1 style="text-align: center;">Grocery List</h1>
     </div>
     <br>
-    {{#if recipeIngredient.length}}
-  <div class="col-md-6 recipeIngredient-list">
+  <p id="grocery-list">
 
-    {{#each recipeIngredients as |recipeIngredient|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/recipeIngredient/{{recipeIngredient.id}}">{{recipeIngredient.name}}+{{recipeIngredient.amount}}</a></h4>
-      
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
-</div>
-</div>
+  </p>
+  <button class="btn btn-sm btn-danger" id="text-me">Send list</button>
 
 {{!-- shows the compiled grocery list items with an option to send the grocery list to the user via text --}}
-{{!-- create get route from grocery list --}}
+<script src="/javascript/sendText.js"></script>
