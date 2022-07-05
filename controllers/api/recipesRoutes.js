@@ -2,54 +2,6 @@ const router = require('express').Router();
 const {Recipes, Ingredients, RecipeIngredient } = require('../../models');
 const  Units  =require('../../models/units');
 
-// // get all recipe data
-// router.get('/', (req,res) => {
-//     Recipes.findAll({ 
-//         include: [{
-//             model: RecipeIngredient,
-//         },
-//         {
-//             model: Ingredients,
-//         include:[{
-//             model: Units
-//         }]
-//     }]
-//     })
-//     .then(dbpost => 
-        
-//         res.json(dbpost))
-//     .then(localStorage.setItem("recipeData", JSON.stringify(dbpost)))
-//     .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//     })
-// });
-
-
-// router.get('/home', (req,res) => {
-//     Recipes.findAll({ 
-//         include: [{
-//             model: RecipeIngredient,
-//         },
-//         {
-//             model: Ingredients,
-//         include:[{
-//             model: Units
-//         }]
-//     }]
-//     })
-//     .then(dbpost => 
-        
-//         res.json(dbpost))
-//     .then(
-        
-//     )
-//     .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//     })
-// });
-
 //user's dashboard page
 router.get('/dashboard', async (req, res) => {
   try {
@@ -66,11 +18,9 @@ router.get('/dashboard', async (req, res) => {
   }],
              
   });
-    
     const recipes = dbRecipeData.map((recipe) =>
       recipe.get({ plain: true })
     );
-console.log(recipes);
     res.render('dashboard', {
       recipes,
       logged_in: req.session.logged_in,
@@ -87,9 +37,7 @@ console.log(recipes);
 router.get('/:id', async (req, res) => {
   try {
     const dbRecipeData = await Recipes.findByPk(req.params.id);
-
     const recipe = dbRecipeData.get({ plain: true });
-    console.log(recipe);
     res.render('recipe', { recipe, logged_in: req.session.logged_in });
   } catch (err) {
     console.log(err);

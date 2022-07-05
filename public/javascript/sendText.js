@@ -5,28 +5,22 @@ var groceryList;
 var userPhone;
 
 
-
+// grabs the users phone data from the session cookie
 getUserData = async() => {
 
     const response = await fetch('/api/users/sendMsg', {
         method: 'GET',
     })
-    // .then((data) => console.log(data.phone))
-    // .then(getGrocery());
     const userPhoneHelp = await response.json();
-
     userPhone = userPhoneHelp.phone
- 
     getGrocery();
-}
+};
+// renders the grocery list to the page
 getGrocery = () => {
     groceryList = localStorage.getItem("GroceryList");
     groceryEl.append(groceryList);
-    
- 
-  
 }
-
+// send the post request to fire the text message
 sendText = async(event) => {
     event.preventDefault();
     groceryList = localStorage.getItem("GroceryList");

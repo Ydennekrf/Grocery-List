@@ -1,3 +1,4 @@
+// logs user in
 const loginFormHandler = async (event) => {
   
     event.preventDefault();
@@ -22,7 +23,7 @@ const loginFormHandler = async (event) => {
       }
     }
   };
-  
+  // creates new user
   const signupFormHandler = async (event) => {
     event.preventDefault();
   
@@ -48,7 +49,7 @@ const loginFormHandler = async (event) => {
       }
     }
   };
-  
+  // event listers
   document
     .querySelector('#login')
     .addEventListener('click', loginFormHandler);

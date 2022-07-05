@@ -32,7 +32,6 @@ router.get('/dinner', (req,res) => {
         
         return;
     }
-    console.log(req.session)
     console.log("dinner");
     res.render('login');
 });

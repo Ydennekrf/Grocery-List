@@ -22,7 +22,6 @@ router.get('/sendMsg',  async(req, res) => {
     const userNum = await Users.findByPk(req.session.user_id,{
     });
     const userData = userNum.get({ plain: true });
-    console.log(`${userData.phone} and other stuff`);
     res.status(200).json(userData);
   } catch (err) {
     res.status(500).json(err);
