@@ -1,5 +1,5 @@
 
-<div class="recipe-card">
+{{!-- <div class="recipe-card">
     <div class="recipe-card-header">
         {{recipe_name}}
     </div>
@@ -17,8 +17,42 @@
       <h6>Ingredients:</h6>
     <p class="card-text">{{recipe.ingredients}}</p>
   </div>
-</div>
+</div> --}}
 
 
 {{!-- add in the ingredients for the recipe --}}
+
+
+        <section class="section">
+            <div class="container has-text-centered">
+                <h2 class="title">Recipes</h2>
+
+                <div class="columns is-centered" style="padding: 2rem">
+                    <div class="column">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-2by1">
+                                    <img src="https://www.thedailymeal.com/sites/default/files/2021/08/20/Basic-Cooking-Methods.jpg" alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content recipe-card">
+                                <div class="media">
+                                    <div class="media-content recipe-card-header">
+                                        <p class="title is-4">{{recipe_name}}</p>
+                                        <script src="/../public/javascript/ingredients.js"></script>
+                                        <p class="subtitle is-6 card-title">{{recipe.title}}</p>
+                                    </div>
+                                </div>
+    
+                                <div class="content">
+                                    <p class="title">Instructions:</div>p>
+                                    <p class="card-text"> {{recipe.instructions}}</p>
+                                    <p class="title">Servings:</p>
+                                    <p class="card-text">{{recipe.servings}}</p>
+                                    <p class="title">Ingredients:</p>
+                                    <p class="card-text">{{recipe.ingredients}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 

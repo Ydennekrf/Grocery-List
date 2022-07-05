@@ -1,6 +1,12 @@
-.jumbo {
+@import url("https://unpkg.com/bulma@0.9.0/css/bulma.min.css");
 
-};
-.header {
+html,body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  background-color: rgb(204, 201, 201);
+}
 
-};
+.navbar, .nav {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: #999
+}
