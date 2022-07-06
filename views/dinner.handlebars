@@ -1,17 +1,58 @@
-<div>
-  <h2>Whats for dinner?</h2>
+<div class="title">
+  <h1>Whats for dinner?</h1>
 </div>
+
+<div>
+  <div class="card recipe-list">
+    <div class="card-body d-flex justify-content-around">
       <form class="recipe-select">
         <h3>Recipes to add:</h3>
-        <label for="dish1"><input type="checkbox" class="checks" id="dish1" name="dish" value="1">Mushroom Risotto</label><br>
-        <label for="dish1"><input type="checkbox" class="checks" id="dish2" name="dish" value="2">10oz NY Strip with mashed potato and asparagus</label><br>
-        <label for="dish1"><input type="checkbox" class="checks" id="dish3" name="dish" value="3">Home style Veal Lasagna</label><br>
-        <label for="dish1"><input type="checkbox" class="checks" id="dish4" name="dish" value="4">Ricotta Veal Meatballs with grilled bread</label><br>
-        <label for="dish1"><input type="checkbox" class="checks" id="dish5" name="dish" value="5">Ricotta Gnocchi with Mushrooms and Arugula</label><br>
-        <label for="dish1"><input type="checkbox" class="checks" id="dish6" name="dish" value="6">Grilled Octopus with N'Duja sausage potatos arugula and a yellow pepper coulis</label><br>
-        <label for="dish1"><input type="checkbox" class="checks" id="dish7" name="dish" value="7">Red Wine salt roast Beets with Ricotta cheese and arugula</label><br>
+        <div class="recipecard">
+          <img class="card-img-top" src="https://hips.hearstapps.com/delish/assets/17/35/1504128527-delish-mushroom-risotto.jpg" alt="Mushroom Risotto">
+          <div class="card-body">
+            <label for="dish1"><input type="checkbox" class="checks" id="dish1" name="dish" value="1">Mushroom Risotto</label>
+          </div>
+        </div>
+        <div class="recipecard">
+          <img class="card-img-top" src="https://img.cdn4dd.com/p/fit=cover,width=1200,height=1200,format=auto,quality=50/media/photosV2/2e5c09bd-a7f7-4cd4-bc3c-3bb2d1539926-retina-large.JPG" alt="10oz NY Strip with mashed potato and asparagus">
+          <div class="card-body">
+            <label for="dish1"><input type="checkbox" class="checks" id="dish2" name="dish" value="2">10oz NY Strip with mashed potato and asparagus</label>
+          </div>
+        </div>
+        <div class="recipecard">
+          <img class="card-img-top" src="https://static.onecms.io/wp-content/uploads/sites/19/2014/08/22/classic-lasagna-meat-sauce-ck-1410p104--2000.jpg" alt="Home style Veal Lasagna">
+          <div class="card-body">
+            <label for="dish1"><input type="checkbox" class="checks" id="dish3" name="dish" value="3">Home style Veal Lasagna</label>
+          </div>
+        </div>
+        <div class="recipecard">
+          <img class="card-img-top" src="https://www.insidehook.com/wp-content/uploads/2022/04/Vallata-50-1-e1649705269542.jpg?fit=1200%2C800" alt="Ricotta Veal Meatballs with grilled bread">
+          <div class="card-body">
+            <label for="dish1"><input type="checkbox" class="checks" id="dish4" name="dish" value="4">Ricotta Veal Meatballs with grilled bread</label>
+          </div>
+        </div>
+        <div class="recipecard">
+          <img class="card-img-top" src="https://www.theoriginaldish.com/wp-content/uploads/2018/09/Gnocchi-with-Mushrooms-3-819x1024.jpg" alt="Ricotta Gnocchi with Mushrooms and Arugula">
+          <div class="card-body">
+            <label for="dish1"><input type="checkbox" class="checks" id="dish5" name="dish" value="5">Ricotta Gnocchi with Mushrooms and Arugula</label>
+          </div>
+        </div>
+        <div class="recipecard">
+          <img class="card-img-top" src="https://chefdrop.ca/wp-content/uploads/RG-meal-kit-Octopus-Nduja-3.jpg" alt="Grilled Octopus with N'Duja sausage potatos arugula and a yellow pepper coulis">
+          <div class="card-body">
+            <label for="dish1"><input type="checkbox" class="checks" id="dish6" name="dish" value="6">Grilled Octopus with N'Duja sausage potatos arugula and a yellow pepper coulis</label>
+          </div>
+        </div>
+        <div class="recipecard">
+          <img class="card-img-top" src="https://baconfatte.com/wp-content/uploads/2015/09/RoastedBeetSalad-BaconFatte.com_011014_resize.jpg" alt="Red Wine salt roast Beets with Ricotta cheese and arugula">
+          <div class="card-body">
+              <label for="dish1"><input type="checkbox" class="checks" id="dish7" name="dish" value="7">Red Wine salt roast Beets with Ricotta cheese and arugula</label>
+          </div>
+        </div>
         <input class="btn btn-sm btn-danger" type="submit" value="Create Grocery List" id="recipe-select">
       </form>
+    </div>
+  </div>
 </div>
 <script src="/javascript/ingredients.js"></script>
 
