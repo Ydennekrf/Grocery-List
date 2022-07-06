@@ -1,23 +1,29 @@
-
-<div class="recipe-card">
-    <div class="recipe-card-header">
-        {{recipe_name}}
+<div class="title">
+  <h1>Recipes</h1>
+</div>
+<div>
+  <div class="card recipe-list">
+    <div class="card-body">
+      <div class="recipe-card">
+        <div class="recipe-card-header">
+          {{recipe_name}}
+        </div>
+        <div class="card mb-3">
+          <div class="card-body">
+            <h6 class="card-title">{{recipe.title}}</h6>
+            <h5>Instructions:</h5>
+            <p class="card-text"> {{recipe.instructions}}</p>
+            <h5>Servings:</h5>
+            <p class="card-text">{{recipe.servings}}</p>
+            <h5>Ingredients:</h5>
+            <p class="card-text">{{recipe.ingredients}}</p>
+          </div>
+        </div>
+      </div>
     </div>
-
-<script src="/../public/javascript/ingredients.js"></script>
-
-
-   <div class="card mb-3">
-   <div class="card-body">
-    <h5 class="card-title">{{recipe.title}}</h5>
-    <h6>Instructions:</h6>
-    <p class="card-text"> {{recipe.instructions}}</p>
-     <h6>Servings:</h6>
-    <p class="card-text">{{recipe.servings}}</p>
-      <h6>Ingredients:</h6>
-    <p class="card-text">{{recipe.ingredients}}</p>
   </div>
 </div>
+<script src="/../public/javascript/ingredients.js"></script>
 
 
 {{!-- add in the ingredients for the recipe --}}

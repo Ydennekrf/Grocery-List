@@ -1,12 +1,17 @@
-<div class="container">
-    <div class="groceries">
-        <h1 style="text-align: center;">Grocery List</h1>
+<div>
+  <div class="card recipe-list">
+    <div class="card-body">
+      <div class="container">
+        <div class="groceries">
+          <h1 style="text-align: center;">Grocery List</h1>
+        </div>
+        <br>
+        <p id="grocery-list"></p>
+        <button class="btn btn-sm btn-danger" id="text-me">Send list</button>
+      </div>
     </div>
-    <br>
-  <p id="grocery-list">
-
-  </p>
-  <button class="btn btn-sm btn-danger" id="text-me">Send list</button>
+  </div>
+</div>
 
 {{!-- shows the compiled grocery list items with an option to send the grocery list to the user via text --}}
 <script src="/javascript/sendText.js"></script>
